@@ -1,0 +1,311 @@
+@mixin projectsGallery {
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+      background: url(../images/portfolio-#{$i}.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
+// glide library overwrite
+.glide__bullets {
+  padding: 5px 0;
+}
+
+.glide__bullet {
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+
+  border-radius: 50%;
+  border: none;
+
+  transform: scale(1);
+  transition: transform 0.5s;
+  outline: none;
+}
+//
+
+.main {
+  section {
+    text-align: center;
+  }
+}
+
+.about {
+  padding: 9rem 0;
+
+  .text {
+    margin-bottom: 3rem;
+  }
+}
+
+// FEATURES CSS
+
+.features {
+  color: #ffffff;
+  background: url(../images/bg-2.jpg);
+  padding: 9rem 0;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  &__text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: left;
+
+    margin-left: 2.5rem;
+
+    span {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/////////////////
+// PROJECTS CSS
+
+.projects {
+  padding-top: 9rem;
+
+  .text {
+    margin-bottom: 7rem;
+  }
+
+  &__imgs {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+  }
+
+  &__img {
+    width: 33.333%;
+    padding-top: 33.333%;
+
+    @include projectsGallery;
+  }
+}
+
+/////////////////
+// REVIEWS CSS
+
+.reviews {
+  color: #ffffff;
+
+  & .container {
+    overflow-x: hidden;
+  }
+
+  blockquote {
+    max-width: 740px;
+    margin: auto;
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  &__blockquote {
+    background: url(../images/bg-2.jpg);
+    padding: 17rem 0 7rem 0;
+  }
+
+  &__quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: italic;
+
+    margin-bottom: 3rem;
+  }
+
+  &__signature {
+    display: inline-block;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-style: normal;
+
+    text-transform: uppercase;
+  }
+
+  &__imgs {
+    overflow-x: hidden;
+    padding: 4.5rem 0;
+  }
+
+  &__img {
+    width: 100%;
+    cursor: grabbing;
+  }
+
+  .glide__bullets {
+    margin-top: 10rem;
+  }
+  .glide__bullet {
+    background: #ffffff;
+    opacity: 0.5;
+    &--active {
+      opacity: 1;
+      transform: scale(1.6);
+    }
+  }
+}
+
+///////////////
+// BLOG CSS
+
+.blog {
+  padding: 9rem 0;
+  background: #fafafa;
+  user-select: none;
+
+  &__header .text {
+    margin-bottom: 7rem;
+  }
+
+  &__cards {
+    overflow-x: hidden;
+    cursor: grabbing;
+  }
+
+  .glide__bullets {
+    margin-top: 5rem;
+  }
+
+  .glide__bullet {
+    &--active {
+      background: #333333;
+      transform: scale(1.5);
+    }
+  }
+}
+
+//////////////
+// CONTACT CSS
+
+.contact {
+  padding: 9rem 0;
+  background: #f6f6f6;
+
+  .contact__info {
+    & > * {
+      text-align: left !important;
+    }
+  }
+
+  .text:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+
+  .text strong {
+    color: #252525;
+  }
+}
+
+.footer {
+  background: linear-gradient(
+      to left,
+      rgba(12, 12, 12, 0.8),
+      rgba(12, 12, 12, 0.8)
+    ),
+    url(../images/blog-2.jpg);
+  background-size: cover;
+  background-position: top;
+
+  &__heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    color: #ffffff;
+    margin-bottom: 3rem;
+  }
+
+  &__icon {
+    display: inline-block;
+    font-size: 2rem;
+
+    color: #ffffff;
+  }
+
+  &__content {
+    padding: 8rem 0;
+  }
+
+  &__about {
+    ul li {
+      margin-right: 1.5rem;
+    }
+
+    ul li a {
+      text-decoration: none;
+    }
+
+    p.text {
+      margin-bottom: 3rem;
+      color: #ffffff;
+    }
+  }
+
+  &__tweets {
+    ul {
+      flex-wrap: wrap;
+    }
+    ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    p.text {
+      margin-bottom: 0;
+      color: #ffffff;
+      max-width: calc(100% - 4rem);
+    }
+  }
+
+  &__imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(2, 8rem);
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 2rem 0;
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    p.text {
+      color: #ffffff;
+    }
+  }
+}
