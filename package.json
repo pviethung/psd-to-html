@@ -1,12 +1,13 @@
 {
   "name": "psd2html",
+  "homepage": "https://hungxu97.github.io/psd-to-html",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --public-url ./",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
@@ -18,14 +19,5 @@
     "node-sass": "^4.14.1",
     "parcel-bundler": "^1.12.4",
     "postcss-modules": "^3.2.0"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {
-        "overrideBrowserslist": [
-          "defaults"
-        ]
-      }
-    }
   }
 }
