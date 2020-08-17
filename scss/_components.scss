@@ -2,15 +2,18 @@
 /*  components  */
 
 .header {
+  background: #ffffff;
+
   &__navbar {
     width: 100%;
     padding: 3rem;
 
     position: fixed;
     top: 0;
-  }
 
-  &__logo {
+    transition: background 0.5s;
+  }
+  .header__logo {
     img {
       width: 85px;
       height: 35px;
@@ -19,7 +22,7 @@
 
   &__nav {
     font-family: 'Work Sans', sans-serif;
-    ul li a {
+    a {
       // color: #5f5f5f;
       color: #bfbfbf;
 
@@ -29,6 +32,10 @@
       padding: 1rem 1.5rem;
       text-transform: uppercase;
 
+      transition: color 0.5s;
+    }
+
+    li:last-child a {
       &:last-child {
         padding-right: 0;
       }
@@ -154,6 +161,7 @@
     background: #ffffff;
     padding: 1.5rem 3rem;
     text-align: left;
+    text-transform: capitalize;
   }
 
   &__title {
@@ -213,5 +221,211 @@
   &__title,
   &__comment {
     width: 100%;
+  }
+}
+
+.footer {
+  background: linear-gradient(
+      to left,
+      rgba(12, 12, 12, 0.8),
+      rgba(12, 12, 12, 0.8)
+    ),
+    url(../images/blog-2.jpg);
+  background-size: cover;
+  background-position: top;
+
+  &__heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    color: #ffffff;
+    margin-bottom: 3rem;
+  }
+
+  &__icon {
+    display: inline-block;
+    font-size: 2rem;
+
+    color: #ffffff;
+  }
+
+  &__content {
+    padding: 8rem 0;
+  }
+
+  &__about {
+    ul li {
+      margin-right: 1.5rem;
+    }
+
+    ul li a {
+      text-decoration: none;
+    }
+
+    p.text {
+      margin-bottom: 3rem;
+      color: #ffffff;
+    }
+  }
+
+  &__tweets {
+    ul {
+      flex-wrap: wrap;
+    }
+    ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    p.text {
+      margin-bottom: 0;
+      color: #ffffff;
+      max-width: calc(100% - 4rem);
+    }
+  }
+
+  &__imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(2, 8rem);
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 2rem 0;
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    p.text {
+      color: #ffffff;
+    }
+  }
+}
+
+// gallery component
+.gallery {
+  background: #f6f6f6;
+  overflow: hidden;
+  padding-bottom: 7rem;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__square {
+    display: inline-block;
+    margin: 4rem 0 2.5rem;
+
+    span {
+      cursor: pointer;
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      position: relative;
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+
+        background: #171717;
+        color: #171717;
+        transition: all 0.2s;
+
+        width: 6px;
+        height: 6px;
+      }
+
+      &::after {
+        left: 0;
+        box-shadow: 0 10px;
+      }
+      &::before {
+        right: 0;
+        box-shadow: 0 10px;
+      }
+
+      &:hover::after,
+      &:hover::before {
+        opacity: 0.6;
+      }
+    }
+
+    &.active span::after,
+    &.active span::before {
+      opacity: 0.4;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    height: 0;
+    margin-bottom: 0;
+    transition: all 1.2s;
+
+    &.active {
+      margin-bottom: 1rem;
+      height: 54px;
+    }
+
+    &.active .gallery__item {
+      transform: scaleY(1) translateY(0);
+      opacity: 0.8;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 2rem;
+
+    transform: scaleY(0) translateY(-30px);
+    transform-origin: top;
+    opacity: 0;
+
+    @for $i from 1 to 7 {
+      &:nth-child(#{$i}) {
+        transition: transform 0.5s, opacity 0.2s;
+        transition-delay: #{$i * 0.05s};
+      }
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+// loadmore component
+.loadmore {
+  text-align: center;
+  padding: 4rem 0;
+
+  a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #171717;
   }
 }

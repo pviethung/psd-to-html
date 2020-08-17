@@ -29,12 +29,7 @@
 }
 //
 
-.main {
-  section {
-    text-align: center;
-  }
-}
-
+// ABOUT CSS
 .about {
   padding: 9rem 0;
 
@@ -44,7 +39,6 @@
 }
 
 // FEATURES CSS
-
 .features {
   color: #ffffff;
   background: url(../images/bg-2.jpg);
@@ -76,9 +70,7 @@
   }
 }
 
-/////////////////
 // PROJECTS CSS
-
 .projects {
   padding-top: 9rem;
 
@@ -95,14 +87,57 @@
   &__img {
     width: 33.333%;
     padding-top: 33.333%;
+    position: relative;
 
     @include projectsGallery;
   }
+
+  &__overlay {
+    &:hover {
+      opacity: 1;
+
+      h3,
+      p {
+        transform: translateY(0);
+      }
+    }
+
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.7s;
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      text-transform: capitalize;
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      transform: translateY(20px);
+      transition: transform 0.7s;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      transform: translateY(10px);
+      transition: transform 0.5s;
+    }
+  }
 }
 
-/////////////////
 // REVIEWS CSS
-
 .reviews {
   color: #ffffff;
 
@@ -164,9 +199,7 @@
   }
 }
 
-///////////////
 // BLOG CSS
-
 .blog {
   padding: 9rem 0;
   background: #fafafa;
@@ -193,9 +226,7 @@
   }
 }
 
-//////////////
 // CONTACT CSS
-
 .contact {
   padding: 9rem 0;
   background: #f6f6f6;
@@ -215,97 +246,32 @@
   }
 }
 
-.footer {
-  background: linear-gradient(
-      to left,
-      rgba(12, 12, 12, 0.8),
-      rgba(12, 12, 12, 0.8)
-    ),
-    url(../images/blog-2.jpg);
-  background-size: cover;
-  background-position: top;
-
-  &__heading {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: capitalize;
-
-    color: #ffffff;
-    margin-bottom: 3rem;
-  }
-
-  &__icon {
-    display: inline-block;
-    font-size: 2rem;
-
-    color: #ffffff;
-  }
-
-  &__content {
-    padding: 8rem 0;
-  }
-
-  &__about {
-    ul li {
-      margin-right: 1.5rem;
+// overwrite header component
+.index__header {
+  &.active {
+    .header__navbar {
+      background: #ffffff;
     }
 
-    ul li a {
-      text-decoration: none;
-    }
-
-    p.text {
-      margin-bottom: 3rem;
-      color: #ffffff;
+    .header__nav {
+      a {
+        color: #5f5f5f;
+      }
     }
   }
 
-  &__tweets {
-    ul {
-      flex-wrap: wrap;
-    }
-    ul li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      width: 100%;
-      margin-bottom: 2rem;
-    }
-
-    p.text {
-      margin-bottom: 0;
-      color: #ffffff;
-      max-width: calc(100% - 4rem);
-    }
-  }
-
-  &__imgs {
-    display: grid;
-    grid-template-columns: repeat(4, 8rem);
-    grid-template-rows: repeat(2, 8rem);
-    gap: 1rem;
-
+  .header__logo {
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__copyright {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-    padding: 2rem 0;
-
-    a {
-      text-decoration: none;
-      color: #ffffff;
+      width: 85px;
+      height: 35px;
     }
 
-    p.text {
-      color: #ffffff;
+    img:first-child {
+      display: block;
+    }
+
+    img:last-child {
+      display: none;
     }
   }
 }

@@ -8,6 +8,12 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: #373a3c;
 }
 
 a {
@@ -17,6 +23,12 @@ a {
 ul {
   list-style: none;
   display: flex;
+}
+
+.main {
+  section {
+    text-align: center;
+  }
 }
 
 /****************/

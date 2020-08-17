@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- bs4 grid -->
@@ -17,13 +17,14 @@
 
 <body>
     <!-- header -->
-    <header class="header">
+    <header class="header index__header">
         <section class="header__navbar">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-auto">
                         <div class="header__logo">
-                            <img src="./images/logo-light.svg" alt="">
+                            <img src="./images/logo-light.svg" alt="logo-light">
+                            <img src="./images/logo.svg" alt="logo">
                         </div>
                     </div>
                     <div class="col-auto">
@@ -31,7 +32,7 @@
                             <ul>
                                 <li><a href="#">about</a></li>
                                 <li><a href="#">contact</a></li>
-                                <li><a href="#">portfolio</a></li>
+                                <li><a href="pages/portfolio.html">portfolio</a></li>
                                 <li><a href="#">blog</a></li>
                             </ul>
                         </nav>
@@ -48,8 +49,8 @@
                     We are about to change the way<br>
                     <em>you public on the web</em>
                 </h1>
-                <a href="#" class="btn">free download</a>
-                <a href="" class="header__down-btn">
+                <a href="javascript:void(0)" class="btn">free download</a>
+                <a href="#about" class="header__down-btn">
                     <ion-icon name="chevron-down-outline"></ion-icon>
                 </a>
             </div>
@@ -63,7 +64,7 @@
 
     <!-- main -->
     <main class="main">
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
@@ -101,7 +102,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="features__item">
-                            <ion-icon name="cog-outline" class="features__icon"></ion-icon>
+                            <ion-icon name="time-outline" class="features__icon"></ion-icon>
                             <p class="features__text">
                                 1465
                                 <br>
@@ -153,15 +154,60 @@
             <div class="projects__gallery">
                 <div class="container">
                     <div class="projects__imgs">
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
-                        <div class="projects__img"></div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>vinyl recored</h3>
+                                <p>mockup</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>modern t-shirt</h3>
+                                <p>print</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>minimal bag</h3>
+                                <p>branding</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>clean & groovy</h3>
+                                <p>design</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>minimal mobile app</h3>
+                                <p>design</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>white t-shirt</h3>
+                                <p>print</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>business card</h3>
+                                <p>branding</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>heja stockholm</h3>
+                                <p>photography</p>
+                            </div>
+                        </div>
+                        <div class="projects__img">
+                            <div class="projects__overlay">
+                                <h3>paper bag</h3>
+                                <p>photography</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -530,12 +576,13 @@
 
 
 
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <!-- glide lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
     <!--  -->
 
-    <!-- font awsome -->
+    <!-- font icons -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
     <!--  -->
 
     <script src="./js/index.js"></script>
