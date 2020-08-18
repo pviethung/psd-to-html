@@ -1,13 +1,3 @@
-@mixin projectsGallery {
-  @for $i from 1 through 9 {
-    &:nth-child(#{$i}) {
-      background: url(../images/portfolio-#{$i}.jpg);
-      background-position: center;
-      background-size: cover;
-    }
-  }
-}
-
 // glide library overwrite
 .glide__bullets {
   padding: 5px 0;
@@ -66,6 +56,17 @@
     span {
       font-size: 1.4rem;
       text-transform: uppercase;
+    }
+  }
+
+  // responsive
+  @include responsiveSM {
+    &__item {
+      margin-bottom: 3.5rem;
+    }
+
+    &__last-item {
+      margin-bottom: 0;
     }
   }
 }
@@ -135,6 +136,14 @@
       transition: transform 0.5s;
     }
   }
+
+  // responsive
+  @include responsiveSM {
+    &__img {
+      width: 100%;
+      padding-top: 100%;
+    }
+  }
 }
 
 // REVIEWS CSS
@@ -195,6 +204,14 @@
     &--active {
       opacity: 1;
       transform: scale(1.6);
+    }
+  }
+
+  // responsive
+  @include responsiveSM {
+    &__quote {
+      max-width: 400px;
+      transform: translateX(60px);
     }
   }
 }
@@ -260,7 +277,7 @@
     }
   }
 
-  .header__logo {
+  .header__navbar .header__logo {
     img {
       width: 85px;
       height: 35px;

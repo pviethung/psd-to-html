@@ -6,14 +6,94 @@
 
   &__navbar {
     width: 100%;
-    padding: 3rem;
+    padding: 3rem 0;
 
     position: fixed;
     top: 0;
+    z-index: 99;
 
     transition: background 0.5s;
   }
-  .header__logo {
+
+  &__navbar--small {
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    opacity: 0;
+    pointer-events: none;
+
+    background: url(../images/bg-small.jpg);
+    background-position: top;
+    background-size: cover;
+
+    transition: opacity 0.5s;
+  }
+
+  &__toggle-btn {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+
+    position: fixed;
+    right: 1.5rem;
+    top: 3rem;
+    z-index: 100;
+
+    &.active {
+      span {
+        transform: rotate(calc(135deg * 3));
+
+        &::before {
+          top: 0;
+          transform: rotate(-90deg);
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #d8d8d8;
+      transition: transform 0.5s;
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #d8d8d8;
+      }
+
+      &::before {
+        top: 1rem;
+      }
+
+      &::after {
+        top: 2rem;
+      }
+    }
+  }
+
+  &__logo {
     img {
       width: 85px;
       height: 35px;
@@ -39,6 +119,36 @@
       &:last-child {
         padding-right: 0;
       }
+    }
+  }
+
+  &__nav--small {
+    margin-top: 4rem;
+    flex-direction: column;
+    text-align: center;
+
+    li {
+      padding: 0.75rem 0;
+
+      a {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: capitalize;
+
+        color: #d8d8d8;
+      }
+    }
+  }
+
+  &__socials {
+    margin-top: 6rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #d8d8d8;
+
+    ion-icon {
+      padding: 0 0.5rem;
     }
   }
 
@@ -100,6 +210,21 @@
 
     ion-icon {
       font-size: 3rem;
+    }
+  }
+
+  // responsive
+  @include responsiveSM {
+    &__nav {
+      display: none;
+    }
+
+    &__navbar--small {
+      display: block;
+    }
+
+    &__toggle-btn {
+      display: inline-block;
     }
   }
 }
@@ -222,6 +347,21 @@
   &__comment {
     width: 100%;
   }
+
+  // responsive
+  @include responsiveSM {
+    margin-top: 3rem;
+
+    &__name {
+      width: 100%;
+      padding-right: 0;
+    }
+
+    &__email {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
 }
 
 .footer {
@@ -317,6 +457,26 @@
       color: #ffffff;
     }
   }
+
+  // responsive
+  @include responsiveSM {
+    &__heading {
+      text-align: center;
+    }
+
+    &__imgs {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__tweets {
+      margin: 7rem 0;
+      text-align: center;
+
+      ul li {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 // gallery component
@@ -377,6 +537,7 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 
     height: 0;
@@ -414,6 +575,14 @@
 
     &.active {
       opacity: 1;
+    }
+  }
+
+  // responsive
+  @include responsiveSM {
+    &__list.active {
+      margin-bottom: 0;
+      height: 110px;
     }
   }
 }

@@ -18,6 +18,8 @@
 <body>
     <!-- header -->
     <header class="header index__header">
+
+        <!-- navbar for pc -->
         <section class="header__navbar">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
@@ -30,16 +32,47 @@
                     <div class="col-auto">
                         <nav class="header__nav">
                             <ul>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">contact</a></li>
-                                <li><a href="pages/portfolio.html">portfolio</a></li>
-                                <li><a href="#">blog</a></li>
+                                <li><a href="#about">about</a></li>
+                                <li><a href="#contact">contact</a></li>
+                                <li><a href="./pages/portfolio.html">portfolio</a></li>
+                                <li><a href="./pages/blog.html">blog</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- navbar for mobile -->
+        <section class="header__navbar--small">
+            <div class="container">
+                <div class="row justify-content-between align-items-center py-5">
+                    <div class="col-auto">
+                        <div class="header__logo">
+                            <img src="./images/logo-light.svg" alt="logo-light">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="header__nav--small">
+                            <li><a href="#about">about</a></li>
+                            <li><a href="#contact">contact</a></li>
+                            <li><a href="./pages/portfolio.html">portfolio</a></li>
+                            <li><a href="./pages/blog.html">blog</a></li>
+                        </ul>
+                        <div class="header__socials">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                            <ion-icon name="logo-facebook"></ion-icon>
+                            <ion-icon name="basketball-outline"></ion-icon>
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <a href="#" class="header__toggle-btn">
+            <span></span>
+        </a>
+
         <section class="header__banner">
             <div class="container">
                 <p class="header__subtitle">
@@ -64,6 +97,8 @@
 
     <!-- main -->
     <main class="main">
+
+        <!-- about -->
         <section class="about" id="about">
             <div class="container">
                 <div class="row">
@@ -121,7 +156,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="features__item">
+                        <div class="features__item features__last-item">
                             <ion-icon name="heart-outline" class="features__icon"></ion-icon>
                             <p class="features__text">
                                 735 <br>
@@ -293,7 +328,7 @@
             <div class="blog__header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 offset-2">
+                        <div class="col-lg-8 offset-lg-2">
                             <h2 class="section-heading">
                                 Latest Blog
                             </h2>
@@ -421,7 +456,7 @@
             </div>
         </section>
 
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">

@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html pages/blog.html --no-cache",
+    "dev": "parcel index.html",
     "build": "parcel build index.html  --public-url .",
     "deploy": "gh-pages -d dist"
   },
