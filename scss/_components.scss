@@ -432,7 +432,7 @@
 
   &__imgs {
     display: grid;
-    grid-template-columns: repeat(4, 8rem);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 8rem);
     gap: 1rem;
 
@@ -459,6 +459,28 @@
   }
 
   // responsive
+  @include responsiveMD {
+    &__tweets {
+      margin: 7rem 0;
+
+      ul li {
+        margin-bottom: 0;
+      }
+    }
+
+    &__tweets {
+      ul {
+        li {
+          justify-content: unset;
+
+          p {
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+
   @include responsiveSM {
     &__heading {
       text-align: center;

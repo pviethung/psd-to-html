@@ -69,6 +69,21 @@
       margin-bottom: 0;
     }
   }
+
+  @include responsiveXS {
+    & {
+      padding: 5rem 0;
+    }
+
+    &__item {
+      flex-direction: column;
+    }
+
+    &__text {
+      text-align: center;
+      margin: 2rem 0;
+    }
+  }
 }
 
 // PROJECTS CSS
@@ -138,6 +153,13 @@
   }
 
   // responsive
+  @include responsiveMD {
+    &__img {
+      width: 50%;
+      padding-top: 50%;
+    }
+  }
+
   @include responsiveSM {
     &__img {
       width: 100%;
@@ -214,6 +236,13 @@
       transform: translateX(60px);
     }
   }
+
+  @include responsiveXS {
+    &__quote {
+      max-width: 400px;
+      transform: translateX(20px);
+    }
+  }
 }
 
 // BLOG CSS
@@ -261,6 +290,13 @@
   .text strong {
     color: #252525;
   }
+
+  // responsive
+  @include responsiveMD {
+    .form {
+      margin-top: 4rem;
+    }
+  }
 }
 
 // overwrite header component
@@ -289,6 +325,24 @@
 
     img:last-child {
       display: none;
+    }
+  }
+
+  //responsive
+  @include responsiveMD {
+    .header__down-btn {
+      margin-top: 10rem;
+    }
+    .header__title {
+      width: 80%;
+      margin: auto;
+      margin-bottom: 5rem;
+    }
+  }
+
+  @include responsiveSM {
+    .header__title {
+      width: 100%;
     }
   }
 }

@@ -79,6 +79,9 @@ if (window.Glide) {
       576: {
         perView: 1,
       },
+      992: {
+        perView: 2,
+      },
     },
   }).mount()
 
@@ -94,7 +97,7 @@ if (window.Glide) {
     focusAt: 'center',
     perView: 5,
     breakpoints: {
-      576: {
+      768: {
         perView: 3,
       },
     },

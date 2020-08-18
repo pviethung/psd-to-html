@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-family: 'Work Sans', sans-serif;
   color: #373a3c;
 }
@@ -44,8 +45,20 @@ ul {
   }
 }
 
-@mixin responsiveSM {
+@mixin responsiveXS {
   @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin responsiveSM {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin responsiveMD {
+  @media only screen and (max-width: 992px) {
     @content;
   }
 }
