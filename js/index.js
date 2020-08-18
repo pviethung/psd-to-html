@@ -8,30 +8,27 @@ const run = () => {
 // mobile navbar toggle btn
 const toggleSmallNav = () => {
   const btn = document.querySelector('.header__toggle-btn')
-  if (!btn) return
+  if (window.getComputedStyle(btn).display === 'none') return
 
   const navbar = document.querySelector('.header__navbar--small')
+  const nav = document.querySelector('.header__nav--small')
 
   btn.addEventListener('click', (e) => {
     e.preventDefault()
-
     btn.classList.toggle('active')
     navbar.classList.toggle('active')
+  })
+
+  Array.from(nav.children).forEach((child) => {
+    child.addEventListener('click', () => {
+      navbar.classList.remove('active')
+      btn.classList.remove('active')
+    })
   })
 }
 
 // mobile navbar collapse
-const collapseSmallNav = () => {
-  const navbar = document.querySelector('.header__navbar--small')
-  if (!navbar) return
-
-  const nav = document.querySelector('.header__nav--small')
-  Array.from(nav.children).forEach((child) => {
-    child.addEventListener('click', () => {
-      navbar.classList.remove('active')
-    })
-  })
-}
+const collapseSmallNav = () => {}
 
 // portfolio page toggle nav button
 const toggleGalleryNav = () => {
